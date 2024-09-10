@@ -23,7 +23,7 @@ public class Error {
 
     public static void main(String[] args) {
         Error error = new Error(false, 25, "Problem");
-        Error errorOne = new Error(true, 1,"No problem");
+        Error errorOne = new Error(true, 1, "No problem");
         Error two = new Error();
         error.printInfo();
         errorOne.printInfo();
