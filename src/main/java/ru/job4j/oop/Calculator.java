@@ -26,13 +26,11 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        Calculator calculatorDivide = new Calculator();
-        Calculator calculatorSumAllOperation = new Calculator();
         int resultSum = Calculator.sum(10);
         int resultMultiply = calculator.multiply(5);
         int resultMinus = Calculator.minus(3);
-        int resultDivide = calculatorDivide.divide(20);
-        int resultSumAllOperation = calculatorSumAllOperation.sumAllOperation(5);
+        int resultDivide = calculator.divide(20);
+        int resultSumAllOperation = calculator.sumAllOperation(5);
         System.out.println(resultSum);
         System.out.println(resultMultiply);
         System.out.println(resultMinus);
