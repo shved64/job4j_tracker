@@ -1,6 +1,7 @@
 package ru.job4j.pojo;
 
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class College {
     public static void main(String[] args) {
@@ -9,6 +10,9 @@ public class College {
         student.setGroup("Java");
         student.setAdmissionDate(new Date());
 
-        System.out.println(student.getFullName() + " Группа: " + student.getGroup() + " Дата поступления: " + student.getAdmissionDate());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
+        String formattedDate = dateFormat.format(student.getAdmissionDate());
+
+        System.out.println(student.getFullName() + " Группа: " + student.getGroup() + " Дата поступления: " + formattedDate);
     }
 }
