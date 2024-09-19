@@ -14,20 +14,15 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine());
             if (matches < 1 || matches > 3) {
                 System.out.println(" Ошибка, введите число от 1 до 3:");
-                continue;
             } else if (matches > count) {
                 System.out.println("Нельзя брать больше спичек чем осталось. Осталось: " + count + " спичек");
-                continue;
+            } else {
+                count -= matches;
+                System.out.println("Остаток: " + count);
+                turn = !turn;
             }
-
-            count -= matches;
-            System.out.println("Остаток: " + count);
-
-            if (count == 0) {
-                break;
-            }
-            turn = !turn;
         }
+
         if (!turn) {
             System.out.println("Выиграл первый игрок");
         } else {
@@ -35,4 +30,5 @@ public class Matches {
         }
     }
 }
+
 
