@@ -20,14 +20,10 @@ class FactorialTest {
     }
 
     @Test
-    public void whenException1() {
+    public void whenCalcFactorialOf5Then120() {
         Factorial factorial = new Factorial();
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> {
-                    factorial.calc(2);
-                }
-        );
-        assertThat(exception.getMessage()).isEqualTo("Number could not be less than 0");
+        int result = factorial.calc(5);
+        int expected = 120;
+        assertThat(result).isEqualTo(expected);
     }
 }
