@@ -22,7 +22,7 @@ public class Tracker {
         List<Item> result = new ArrayList<>();
         for (Item item : items) {
             if (item.getName().equals(key)) {
-                result.add(item); // Добавляем найденные элементы в результат
+                result.add(item);
             }
         }
         return result;
