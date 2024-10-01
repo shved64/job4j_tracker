@@ -9,9 +9,7 @@ public class ConvertList {
         for (int[] array : list) {
             for (int cell : array) {
                 result.add(cell);
-
             }
-
         }
         return result;
     }
