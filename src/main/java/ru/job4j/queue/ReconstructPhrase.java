@@ -17,24 +17,25 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder result = new StringBuilder();
-        Character[] elementArray = evenElements.toArray(new Character[0]);
-        for (int i = 0; i < elementArray.length; i++) {
-            if (i % 2 == 0) {
-                result.append(elementArray[i]);
-
+        int index = 0;
+        for (Character element : evenElements) {
+            if (index % 2 == 0) {
+                result.append(element);
             }
+            index++;
         }
         return result.toString();
     }
+
 
     private String getDescendingElements() {
         StringBuilder result = new StringBuilder();
-        Iterator<Character> iterator = descendingElements.descendingIterator();
-        while (iterator.hasNext()) {
-            result.append(iterator.next());
+        while (!descendingElements.isEmpty()) {
+            result.append(descendingElements.pollLast());
         }
         return result.toString();
     }
+
 
     public String getReconstructPhrase() {
         return getEvenElements() + getDescendingElements();
