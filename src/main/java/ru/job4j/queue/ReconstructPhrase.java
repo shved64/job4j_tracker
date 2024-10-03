@@ -27,7 +27,6 @@ public class ReconstructPhrase {
         return result.toString();
     }
 
-
     private String getDescendingElements() {
         StringBuilder result = new StringBuilder();
         while (!descendingElements.isEmpty()) {
@@ -35,7 +34,6 @@ public class ReconstructPhrase {
         }
         return result.toString();
     }
-
 
     public String getReconstructPhrase() {
         return getEvenElements() + getDescendingElements();
