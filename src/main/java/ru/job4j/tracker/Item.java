@@ -2,8 +2,9 @@ package ru.job4j.tracker;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
-public class Item {
+public class Item implements Comparable<Item>{
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
@@ -50,4 +51,25 @@ public class Item {
         return created;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Item item = (Item) object;
+        return id == item.id && Objects.equals(name, item.name) && Objects.equals(created, item.created);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, created);
+    }
+
+    @Override
+    public int compareTo(Item other) {
+        return this.name.compareTo(other.name);
+    }
 }
