@@ -11,11 +11,11 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-return users.keySet()
-        .stream()
-        .filter(user -> user.passport().equals(passport))
-        .findFirst()
-        .orElse(null);
+        return users.keySet()
+                .stream()
+                .filter(user -> user.passport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     public Account findByRequisite(String passport, String requisite) {
@@ -24,10 +24,10 @@ return users.keySet()
             return null;
         }
 
-return users.get(findByPassport(passport))
-        .stream()
-        .filter(account -> account.requisite().equals(requisite))
-        .findFirst()
-        .orElse(null);
+        return users.get(findByPassport(passport))
+                .stream()
+                .filter(account -> account.requisite().equals(requisite))
+                .findFirst()
+                .orElse(null);
     }
 }
