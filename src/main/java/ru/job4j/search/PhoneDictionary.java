@@ -21,9 +21,9 @@ public class PhoneDictionary {
                     .or(predicatePhone)
                     .or(predicateAddress);
 
-        ArrayList<Person> result = new ArrayList<>();
+        var result = new ArrayList<Person>();
 
-        for (Person person : persons) {
+        for (var person : persons) {
 
             if (combine.test(person)) {
                 result.add(person);
